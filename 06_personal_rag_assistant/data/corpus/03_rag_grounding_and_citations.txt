@@ -1,0 +1,12 @@
+Grounded Retrieval-Augmented Generation and Citation Enforcement
+
+Production RAG systems must prevent hallucinations by enforcing strict provenance and explicit abstention rules.
+
+1. Inline Citation Provenance
+Every factual claim in a grounded RAG response must carry an inline citation tag in the format [source_file#chunk_id]. Inline citations make answers auditable by letting users and automated evaluators verify that every sentence maps directly back to a specific document page and chunk excerpt.
+
+2. Anti-Hallucination Refusal Policy
+When a user asks an out-of-scope question whose concepts do not appear in the indexed corpus, the retrieval stage yields low cosine similarity, weak BM25 scores, and poor content-term overlap. Rather than fabricating an answer from parametric guesses, the QA engine must check calibrated relevance thresholds and emit an explicit anti-hallucination refusal stating that the indexed documents do not contain sufficient supporting evidence.
+
+3. Chunking Strategy and Overlap
+Recursive character and sentence chunking splits documents along natural boundaries (paragraphs, newlines, sentence punctuation) up to a configurable chunk_size. Including a modest chunk_overlap (for example 15 to 20 percent) prevents facts that straddle chunk boundaries from being severed during retrieval.

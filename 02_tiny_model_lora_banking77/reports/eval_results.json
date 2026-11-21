@@ -1,0 +1,558 @@
+{
+  "model_id": "Qwen/Qwen3-0.6B",
+  "dataset_id": "mteb/banking77",
+  "adapter_dir": "./02_tiny_model_lora_banking77/artifacts/qwen3_0.6b_banking77_lora",
+  "gpu": "NVIDIA GeForce GTX 1650 Ti",
+  "head_to_head_samples": 770,
+  "total_test_split": 3076,
+  "num_labels": 77,
+  "models": {
+    "qwen3_0.6b_base_zero_shot": {
+      "num_samples": 770,
+      "exact_match_accuracy": 0.0,
+      "exact_match_pct": 0.0,
+      "macro_f1": 0.0,
+      "macro_f1_pct": 0.0,
+      "top3_accuracy": 0.0,
+      "top3_pct": 0.0,
+      "invalid_label_count": 770,
+      "invalid_label_rate": 1.0,
+      "invalid_label_pct": 100.0,
+      "prompt_mode": "standard",
+      "batch_size": 16,
+      "num_beams": 3,
+      "eval_seconds": 448.86,
+      "throughput_samples_per_sec": 1.72,
+      "peak_vram_mib": 2980.6,
+      "latency_p50_ms": 4220.14,
+      "latency_p99_ms": 6705.17,
+      "latency_bench_samples": 40,
+      "sample_predictions": [
+        {
+          "query": "Is there a way to know when my card will arrive?",
+          "gold": "card_arrival",
+          "pred_top1": "a",
+          "pred_top3": [
+            "a"
+          ],
+          "raw_top1": "A. Economic\nB. Social\nC. Personal\nD. Professional",
+          "correct": false
+        },
+        {
+          "query": "Do you know if there is a tracking number for the new card you sent me?",
+          "gold": "card_arrival",
+          "pred_top1": "a",
+          "pred_top3": [
+            "a"
+          ],
+          "raw_top1": "A) Information\nB) Shopping\nC) Entertainment\nD) News",
+          "correct": false
+        },
+        {
+          "query": "Is it normal to have to wait over a week for my new card?",
+          "gold": "card_arrival",
+          "pred_top1": "options",
+          "pred_top3": [
+            "options",
+            "a"
+          ],
+          "raw_top1": "Options:\nA. Help\nB. Information\nC. Inquiry\nD.",
+          "correct": false
+        },
+        {
+          "query": "How do I track my card?",
+          "gold": "card_arrival",
+          "pred_top1": "options",
+          "pred_top3": [
+            "options"
+          ],
+          "raw_top1": "Options: \nA. Financial Services\nB. Banking Services\nC. Personal",
+          "correct": false
+        },
+        {
+          "query": "I did not get my card yet, is it lost?",
+          "gold": "card_arrival",
+          "pred_top1": "options",
+          "pred_top3": [
+            "options"
+          ],
+          "raw_top1": "Options:\nA) Request for assistance\nB) Request for information\nC)",
+          "correct": false
+        },
+        {
+          "query": "My card has not arrived yet, where is it?",
+          "gold": "card_arrival",
+          "pred_top1": "a",
+          "pred_top3": [
+            "a",
+            "options"
+          ],
+          "raw_top1": "A. Transaction Processing\nB. Payment Processing\nC. Customer Service\nD",
+          "correct": false
+        },
+        {
+          "query": "What is the tracking number for my card that was mailed?",
+          "gold": "card_arrival",
+          "pred_top1": "a",
+          "pred_top3": [
+            "a"
+          ],
+          "raw_top1": "A. Transaction\nB. Customer Service\nC. Personal Information\nD.",
+          "correct": false
+        },
+        {
+          "query": "I ordered a card a week ago, and it's still not here. What do I do?",
+          "gold": "card_arrival",
+          "pred_top1": "options",
+          "pred_top3": [
+            "options"
+          ],
+          "raw_top1": "Options:\nA. Help\nB. Support\nC. Assistance\nD.",
+          "correct": false
+        },
+        {
+          "query": "I'm still waiting on my card to be delivered.",
+          "gold": "card_arrival",
+          "pred_top1": "options",
+          "pred_top3": [
+            "options",
+            "a"
+          ],
+          "raw_top1": "Options:\nA. Request for service\nB. Request for information\nC.",
+          "correct": false
+        },
+        {
+          "query": "Is there tracking info available?",
+          "gold": "card_arrival",
+          "pred_top1": "options",
+          "pred_top3": [
+            "options"
+          ],
+          "raw_top1": "Options:\nA. Help\nB. Inquiry\nC. Request\nD.",
+          "correct": false
+        }
+      ]
+    },
+    "qwen3_0.6b_base_few_shot": {
+      "num_samples": 770,
+      "exact_match_accuracy": 0.0416,
+      "exact_match_pct": 4.16,
+      "macro_f1": 0.058,
+      "macro_f1_pct": 5.8,
+      "top3_accuracy": 0.0494,
+      "top3_pct": 4.94,
+      "invalid_label_count": 727,
+      "invalid_label_rate": 0.9442,
+      "invalid_label_pct": 94.42,
+      "prompt_mode": "few_shot",
+      "batch_size": 8,
+      "num_beams": 3,
+      "eval_seconds": 1146.47,
+      "throughput_samples_per_sec": 0.67,
+      "peak_vram_mib": 2559.1,
+      "latency_p50_ms": 3554.31,
+      "latency_p99_ms": 5450.07,
+      "latency_bench_samples": 40,
+      "sample_predictions": [
+        {
+          "query": "Is there a way to know when my card will arrive?",
+          "gold": "card_arrival",
+          "pred_top1": "card_arrival",
+          "pred_top3": [
+            "card_arrival"
+          ],
+          "raw_top1": "card_arrival\n\nQuery: I need to check my account balance.\nIntent:",
+          "correct": true
+        },
+        {
+          "query": "Do you know if there is a tracking number for the new card you sent me?",
+          "gold": "card_arrival",
+          "pred_top1": "track_new_card",
+          "pred_top3": [
+            "track_new_card"
+          ],
+          "raw_top1": "track_new_card\n\nQuery: What is the current balance of my account?\nIntent",
+          "correct": false
+        },
+        {
+          "query": "Is it normal to have to wait over a week for my new card?",
+          "gold": "card_arrival",
+          "pred_top1": "waiting_for_new_card",
+          "pred_top3": [
+            "waiting_for_new_card"
+          ],
+          "raw_top1": "waiting_for_new_card\n\nQuery: What is the current balance of my account?",
+          "correct": false
+        },
+        {
+          "query": "How do I track my card?",
+          "gold": "card_arrival",
+          "pred_top1": "track_my_card",
+          "pred_top3": [
+            "track_my_card"
+          ],
+          "raw_top1": "track_my_card\n\nQuery: What is the current balance of my account?\nIntent",
+          "correct": false
+        },
+        {
+          "query": "I did not get my card yet, is it lost?",
+          "gold": "card_arrival",
+          "pred_top1": "lost_card",
+          "pred_top3": [
+            "lost_card"
+          ],
+          "raw_top1": "lost_card\n\nQuery: I need to check my balance.\nIntent:\ncheck_balance",
+          "correct": false
+        },
+        {
+          "query": "My card has not arrived yet, where is it?",
+          "gold": "card_arrival",
+          "pred_top1": "card_not_arrived",
+          "pred_top3": [
+            "card_not_arrived"
+          ],
+          "raw_top1": "card_not_arrived\n\nQuery: I need to check my account balance.\nIntent",
+          "correct": false
+        },
+        {
+          "query": "What is the tracking number for my card that was mailed?",
+          "gold": "card_arrival",
+          "pred_top1": "tracking_number",
+          "pred_top3": [
+            "tracking_number"
+          ],
+          "raw_top1": "tracking_number\n\nQuery: What is the current status of my card?\nIntent:",
+          "correct": false
+        },
+        {
+          "query": "I ordered a card a week ago, and it's still not here. What do I do?",
+          "gold": "card_arrival",
+          "pred_top1": "card_not_arrived",
+          "pred_top3": [
+            "card_not_arrived"
+          ],
+          "raw_top1": "card_not_arrived\n\nIntent:\ncard_not_arrived\n\nIntent:\ncard_sw",
+          "correct": false
+        },
+        {
+          "query": "I'm still waiting on my card to be delivered.",
+          "gold": "card_arrival",
+          "pred_top1": "card_arrival",
+          "pred_top3": [
+            "card_arrival"
+          ],
+          "raw_top1": "card_arrival\n\nOkay, let's see. The user provided a list of",
+          "correct": true
+        },
+        {
+          "query": "Is there tracking info available?",
+          "gold": "card_arrival",
+          "pred_top1": "tracking_info",
+          "pred_top3": [
+            "tracking_info"
+          ],
+          "raw_top1": "tracking_info\n\nQuery: What is the current balance of my account?\nIntent:",
+          "correct": false
+        }
+      ]
+    },
+    "qwen3_0.6b_lora_finetuned": {
+      "num_samples": 770,
+      "exact_match_accuracy": 0.8597,
+      "exact_match_pct": 85.97,
+      "macro_f1": 0.8569,
+      "macro_f1_pct": 85.69,
+      "top3_accuracy": 0.9052,
+      "top3_pct": 90.52,
+      "invalid_label_count": 20,
+      "invalid_label_rate": 0.026,
+      "invalid_label_pct": 2.6,
+      "prompt_mode": "standard",
+      "batch_size": 16,
+      "num_beams": 3,
+      "eval_seconds": 375.42,
+      "throughput_samples_per_sec": 2.05,
+      "peak_vram_mib": 2452.7,
+      "latency_p50_ms": 1095.72,
+      "latency_p99_ms": 1973.38,
+      "latency_bench_samples": 40,
+      "sample_predictions": [
+        {
+          "query": "Is there a way to know when my card will arrive?",
+          "gold": "card_arrival",
+          "pred_top1": "card_delivery_estimate",
+          "pred_top3": [
+            "card_delivery_estimate",
+            "card_arrival",
+            "card_arrival_estimate"
+          ],
+          "raw_top1": "card_delivery_estimate",
+          "correct": false
+        },
+        {
+          "query": "Do you know if there is a tracking number for the new card you sent me?",
+          "gold": "card_arrival",
+          "pred_top1": "card_arrival",
+          "pred_top3": [
+            "card_arrival",
+            "card_delivery_estimate",
+            "card_arrival\u5361\u7247"
+          ],
+          "raw_top1": "card_arrival",
+          "correct": true
+        },
+        {
+          "query": "Is it normal to have to wait over a week for my new card?",
+          "gold": "card_arrival",
+          "pred_top1": "card_arrival",
+          "pred_top3": [
+            "card_arrival",
+            "card_delivery_estimate",
+            "card_delivery_timing"
+          ],
+          "raw_top1": "card_arrival",
+          "correct": true
+        },
+        {
+          "query": "How do I track my card?",
+          "gold": "card_arrival",
+          "pred_top1": "card_arrival",
+          "pred_top3": [
+            "card_arrival",
+            "lost_or_stolen_card",
+            "card_delivery_estimate"
+          ],
+          "raw_top1": "card_arrival",
+          "correct": true
+        },
+        {
+          "query": "I did not get my card yet, is it lost?",
+          "gold": "card_arrival",
+          "pred_top1": "card_arrival",
+          "pred_top3": [
+            "card_arrival",
+            "lost_or_stolen_card",
+            "lost_or_stolen_phone"
+          ],
+          "raw_top1": "card_arrival",
+          "correct": true
+        },
+        {
+          "query": "My card has not arrived yet, where is it?",
+          "gold": "card_arrival",
+          "pred_top1": "card_arrival",
+          "pred_top3": [
+            "card_arrival",
+            "card_arrived",
+            "card_delivery_estimate"
+          ],
+          "raw_top1": "card_arrival",
+          "correct": true
+        },
+        {
+          "query": "What is the tracking number for my card that was mailed?",
+          "gold": "card_arrival",
+          "pred_top1": "card_arrival",
+          "pred_top3": [
+            "card_arrival",
+            "card_delivery_estimate",
+            "card_arrived"
+          ],
+          "raw_top1": "card_arrival",
+          "correct": true
+        },
+        {
+          "query": "I ordered a card a week ago, and it's still not here. What do I do?",
+          "gold": "card_arrival",
+          "pred_top1": "card_arrival",
+          "pred_top3": [
+            "card_arrival",
+            "card_delivery_estimate",
+            "card_arrived"
+          ],
+          "raw_top1": "card_arrival",
+          "correct": true
+        },
+        {
+          "query": "I'm still waiting on my card to be delivered.",
+          "gold": "card_arrival",
+          "pred_top1": "card_arrival",
+          "pred_top3": [
+            "card_arrival",
+            "card_delivery_estimate",
+            "card_about_to_expire"
+          ],
+          "raw_top1": "card_arrival",
+          "correct": true
+        },
+        {
+          "query": "Is there tracking info available?",
+          "gold": "card_arrival",
+          "pred_top1": "card_arrival",
+          "pred_top3": [
+            "card_arrival",
+            "card_delivery_estimate",
+            "card_payment_not_received"
+          ],
+          "raw_top1": "card_arrival",
+          "correct": true
+        }
+      ]
+    }
+  },
+  "delta_lora_vs_base_zero_shot": {
+    "exact_match_pct_gain": 85.97,
+    "macro_f1_pct_gain": 85.69,
+    "top3_pct_gain": 90.52,
+    "invalid_label_pct_reduction": 97.4
+  },
+  "delta_lora_vs_base_few_shot": {
+    "exact_match_pct_gain": 81.81,
+    "macro_f1_pct_gain": 79.89,
+    "top3_pct_gain": 85.58,
+    "invalid_label_pct_reduction": 91.82
+  },
+  "lora_full_test_split": {
+    "num_samples": 3076,
+    "exact_match_accuracy": 0.8459,
+    "exact_match_pct": 84.59,
+    "macro_f1": 0.8459,
+    "macro_f1_pct": 84.59,
+    "top3_accuracy": 0.8934,
+    "top3_pct": 89.34,
+    "invalid_label_count": 103,
+    "invalid_label_rate": 0.0335,
+    "invalid_label_pct": 3.35,
+    "prompt_mode": "standard",
+    "batch_size": 16,
+    "num_beams": 3,
+    "eval_seconds": 1420.82,
+    "throughput_samples_per_sec": 2.16,
+    "peak_vram_mib": 2514.1,
+    "latency_p50_ms": 670.72,
+    "latency_p99_ms": 967.52,
+    "latency_bench_samples": 40,
+    "sample_predictions": [
+      {
+        "query": "How do I locate my card?",
+        "gold": "card_arrival",
+        "pred_top1": "lost_or_stolen_card",
+        "pred_top3": [
+          "lost_or_stolen_card",
+          "card_linking",
+          "card_about_to_expire"
+        ],
+        "raw_top1": "lost_or_stolen_card",
+        "correct": false
+      },
+      {
+        "query": "I still have not received my new card, I ordered over a week ago.",
+        "gold": "card_arrival",
+        "pred_top1": "card_arrival",
+        "pred_top3": [
+          "card_arrival",
+          "card_about_to_expire",
+          "card_delivery_estimate"
+        ],
+        "raw_top1": "card_arrival",
+        "correct": true
+      },
+      {
+        "query": "I ordered a card but it has not arrived. Help please!",
+        "gold": "card_arrival",
+        "pred_top1": "card_arrival",
+        "pred_top3": [
+          "card_arrival",
+          "card_delivery_estimate",
+          "card_arrived"
+        ],
+        "raw_top1": "card_arrival",
+        "correct": true
+      },
+      {
+        "query": "Is there a way to know when my card will arrive?",
+        "gold": "card_arrival",
+        "pred_top1": "card_delivery_estimate",
+        "pred_top3": [
+          "card_delivery_estimate",
+          "card_arrival",
+          "card_arrival_estimate"
+        ],
+        "raw_top1": "card_delivery_estimate",
+        "correct": false
+      },
+      {
+        "query": "My card has not arrived yet.",
+        "gold": "card_arrival",
+        "pred_top1": "card_arrival",
+        "pred_top3": [
+          "card_arrival",
+          "card_delivery_estimate",
+          "card_arrived"
+        ],
+        "raw_top1": "card_arrival",
+        "correct": true
+      },
+      {
+        "query": "When will I get my card?",
+        "gold": "card_arrival",
+        "pred_top1": "card_delivery_estimate",
+        "pred_top3": [
+          "card_delivery_estimate",
+          "card_arrival",
+          "order_physical_card"
+        ],
+        "raw_top1": "card_delivery_estimate",
+        "correct": false
+      },
+      {
+        "query": "Do you know if there is a tracking number for the new card you sent me?",
+        "gold": "card_arrival",
+        "pred_top1": "card_arrival",
+        "pred_top3": [
+          "card_arrival",
+          "card_delivery_estimate",
+          "card_arrival\u5361\u7247"
+        ],
+        "raw_top1": "card_arrival",
+        "correct": true
+      },
+      {
+        "query": "i have not received my card",
+        "gold": "card_arrival",
+        "pred_top1": "card_arrival",
+        "pred_top3": [
+          "card_arrival",
+          "card_delivery_estimate",
+          "card_arrival\u5361\u7247"
+        ],
+        "raw_top1": "card_arrival",
+        "correct": true
+      },
+      {
+        "query": "still waiting on that card",
+        "gold": "card_arrival",
+        "pred_top1": "card_arrival",
+        "pred_top3": [
+          "card_arrival",
+          "card_delivery_estimate",
+          "getting_spare_card"
+        ],
+        "raw_top1": "card_arrival",
+        "correct": true
+      },
+      {
+        "query": "Is it normal to have to wait over a week for my new card?",
+        "gold": "card_arrival",
+        "pred_top1": "card_arrival",
+        "pred_top3": [
+          "card_arrival",
+          "card_delivery_estimate",
+          "card_delivery_timing"
+        ],
+        "raw_top1": "card_arrival",
+        "correct": true
+      }
+    ]
+  }
+}

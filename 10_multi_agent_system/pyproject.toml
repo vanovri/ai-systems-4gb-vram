@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multi-agent-system"
+version = "0.1.0"
+description = "Framework-light CrewAI-style multi-agent engine (Researcher, Analyst, ReportWriter, CriticVerifier) with Pydantic JSON handoffs and revision loop."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.27.0",
+    "pydantic>=2.7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+crewai = [
+    "crewai>=0.80.0",
+]
+
+[project.scripts]
+multi-agent-crew = "multi_agent.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

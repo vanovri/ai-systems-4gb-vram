@@ -1,0 +1,10 @@
+[project]
+name = "instagram-two-tower"
+version = "1.0.0"
+description = "Rebuild Instagram's Algorithm — Two-Tower Neural Retrieval with Log-Q Popularity Debiasing"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-v"

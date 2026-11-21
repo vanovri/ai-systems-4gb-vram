@@ -1,0 +1,256 @@
+{
+  "generated_at": "2026-11-20T14:17:36.799929+00:00",
+  "index_stats": {
+    "num_chunks": 16,
+    "vector_dim": 256,
+    "embedder_backend": "local_tfidf_svd_ngram",
+    "faiss_index_type": "IndexFlatIP"
+  },
+  "metrics": {
+    "answerable_queries": 10,
+    "refusal_queries": 2,
+    "recall_at_1": 1.0,
+    "recall_at_3": 1.0,
+    "mrr": 1.0,
+    "grounded_citation_accuracy": 1.0,
+    "anti_hallucination_refusal_accuracy": 1.0
+  },
+  "retrieval_mode_comparison": {
+    "hybrid": {
+      "recall_at_3": 1.0,
+      "mrr": 1.0
+    },
+    "dense": {
+      "recall_at_3": 1.0,
+      "mrr": 1.0
+    },
+    "bm25": {
+      "recall_at_3": 1.0,
+      "mrr": 1.0
+    }
+  },
+  "cases": [
+    {
+      "id": "q01_faiss_cosine",
+      "query": "How does FAISS IndexFlatIP compute cosine similarity?",
+      "expected_source": "01_faiss_architecture.md",
+      "first_match_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "refused": false,
+      "citation_ok": true,
+      "citations": [
+        "[01_faiss_architecture.md#01_faiss_architecture_p1_c000]",
+        "[01_faiss_architecture.md#01_faiss_architecture_p1_c001]"
+      ],
+      "top_sources": [
+        "01_faiss_architecture.md",
+        "01_faiss_architecture.md",
+        "01_faiss_architecture.md"
+      ],
+      "confidence": 0.761
+    },
+    {
+      "id": "q02_faiss_persistence",
+      "query": "Which FAISS functions persist and reload a binary index from disk?",
+      "expected_source": "01_faiss_architecture.md",
+      "first_match_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "refused": false,
+      "citation_ok": true,
+      "citations": [
+        "[01_faiss_architecture.md#01_faiss_architecture_p1_c002]"
+      ],
+      "top_sources": [
+        "01_faiss_architecture.md",
+        "01_faiss_architecture.md",
+        "03_rag_grounding_and_citations.txt"
+      ],
+      "confidence": 0.7835
+    },
+    {
+      "id": "q03_bm25_params",
+      "query": "What do the k1 and b hyperparameters control in Okapi BM25?",
+      "expected_source": "02_bm25_and_rrf.md",
+      "first_match_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "refused": false,
+      "citation_ok": true,
+      "citations": [
+        "[02_bm25_and_rrf.md#02_bm25_and_rrf_p1_c001]"
+      ],
+      "top_sources": [
+        "02_bm25_and_rrf.md",
+        "02_bm25_and_rrf.md",
+        "03_rag_grounding_and_citations.txt"
+      ],
+      "confidence": 0.6521
+    },
+    {
+      "id": "q04_rrf_formula",
+      "query": "What is the Reciprocal Rank Fusion formula and default constant k?",
+      "expected_source": "02_bm25_and_rrf.md",
+      "first_match_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "refused": false,
+      "citation_ok": true,
+      "citations": [
+        "[02_bm25_and_rrf.md#02_bm25_and_rrf_p1_c002]",
+        "[02_bm25_and_rrf.md#02_bm25_and_rrf_p1_c000]"
+      ],
+      "top_sources": [
+        "02_bm25_and_rrf.md",
+        "02_bm25_and_rrf.md",
+        "02_bm25_and_rrf.md"
+      ],
+      "confidence": 0.8827
+    },
+    {
+      "id": "q05_citation_format",
+      "query": "Why must grounded RAG systems attach inline source#chunk_id citations?",
+      "expected_source": "03_rag_grounding_and_citations.txt",
+      "first_match_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "refused": false,
+      "citation_ok": true,
+      "citations": [
+        "[03_rag_grounding_and_citations.txt#03_rag_grounding_and_citations_p1_c001]",
+        "[03_rag_grounding_and_citations.txt#03_rag_grounding_and_citations_p1_c000]"
+      ],
+      "top_sources": [
+        "03_rag_grounding_and_citations.txt",
+        "03_rag_grounding_and_citations.txt",
+        "01_faiss_architecture.md"
+      ],
+      "confidence": 0.7296
+    },
+    {
+      "id": "q06_anti_hallucination",
+      "query": "When should a RAG assistant emit an explicit anti-hallucination refusal?",
+      "expected_source": "03_rag_grounding_and_citations.txt",
+      "first_match_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "refused": false,
+      "citation_ok": true,
+      "citations": [
+        "[03_rag_grounding_and_citations.txt#03_rag_grounding_and_citations_p1_c002]",
+        "[03_rag_grounding_and_citations.txt#03_rag_grounding_and_citations_p1_c000]"
+      ],
+      "top_sources": [
+        "03_rag_grounding_and_citations.txt",
+        "03_rag_grounding_and_citations.txt",
+        "05_python_async_internals.pdf"
+      ],
+      "confidence": 0.7445
+    },
+    {
+      "id": "q07_fastapi_health",
+      "query": "What fields should a production FastAPI health endpoint expose?",
+      "expected_source": "04_fastapi_production_ops.md",
+      "first_match_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "refused": false,
+      "citation_ok": true,
+      "citations": [
+        "[04_fastapi_production_ops.md#04_fastapi_production_ops_p1_c001]",
+        "[04_fastapi_production_ops.md#04_fastapi_production_ops_p1_c000]"
+      ],
+      "top_sources": [
+        "04_fastapi_production_ops.md",
+        "04_fastapi_production_ops.md",
+        "03_rag_grounding_and_citations.txt"
+      ],
+      "confidence": 0.8885
+    },
+    {
+      "id": "q08_fastapi_lifespan",
+      "query": "How does FastAPI avoid blocking the asyncio event loop during CPU work?",
+      "expected_source": "04_fastapi_production_ops.md",
+      "first_match_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "refused": false,
+      "citation_ok": true,
+      "citations": [
+        "[04_fastapi_production_ops.md#04_fastapi_production_ops_p1_c002]",
+        "[05_python_async_internals.pdf#05_python_async_internals_p1_c000]"
+      ],
+      "top_sources": [
+        "04_fastapi_production_ops.md",
+        "05_python_async_internals.pdf",
+        "05_python_async_internals.pdf"
+      ],
+      "confidence": 0.6678
+    },
+    {
+      "id": "q09_pdf_event_loop",
+      "query": "How does Python asyncio schedule coroutines on a single-threaded event loop?",
+      "expected_source": "05_python_async_internals.pdf",
+      "first_match_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "refused": false,
+      "citation_ok": true,
+      "citations": [
+        "[05_python_async_internals.pdf#05_python_async_internals_p1_c000]"
+      ],
+      "top_sources": [
+        "05_python_async_internals.pdf",
+        "04_fastapi_production_ops.md",
+        "04_fastapi_production_ops.md"
+      ],
+      "confidence": 0.8297
+    },
+    {
+      "id": "q10_pdf_cancellation",
+      "query": "How should asyncio CancelledError be handled during graceful shutdown?",
+      "expected_source": "05_python_async_internals.pdf",
+      "first_match_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": true,
+      "hit_at_3": true,
+      "refused": false,
+      "citation_ok": true,
+      "citations": [
+        "[05_python_async_internals.pdf#05_python_async_internals_p2_c000]"
+      ],
+      "top_sources": [
+        "05_python_async_internals.pdf",
+        "05_python_async_internals.pdf",
+        "04_fastapi_production_ops.md"
+      ],
+      "confidence": 0.858
+    },
+    {
+      "id": "q11_oos_recipe",
+      "query": "What temperature bakes sourdough brioche croissants in Paris?",
+      "should_refuse": true,
+      "refused": true,
+      "confidence": 0.2001,
+      "passed": true
+    },
+    {
+      "id": "q12_oos_sports",
+      "query": "Which goalkeeper saved the penalty shootout in the 1994 FIFA World Cup final?",
+      "should_refuse": true,
+      "refused": true,
+      "confidence": 0.2353,
+      "passed": true
+    }
+  ]
+}

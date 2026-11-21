@@ -1,0 +1,47 @@
+# Virtual environments & caches
+.venv/
+.venv-ml/
+.venv-ch2/
+.venv-ch3/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+node_modules/
+
+# Secrets & environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Large model weights, checkpoints, raw datasets, and local databases
+*.safetensors
+*.pt
+*.pth
+*.bin
+*.onnx
+*.gguf
+*.ckpt
+*.sqlite
+*.sqlite3
+*.db
+*.db-wal
+*.db-shm
+**/artifacts/checkpoints/
+**/data/raw/
+05_neural_pong_world_model/data/pong_140k/
+05_neural_pong_world_model/data/pong_unroll_30k/
+02_tiny_model_lora_banking77/artifacts/qwen3_0.6b_banking77_lora/tokenizer.json
+07_ai_research_agent/.cache/
+
+# Local orchestration notes & machine-specific snapshot
+prompts/
+ENV_ML_READY.json
+.DS_Store
+Thumbs.db
+*.log

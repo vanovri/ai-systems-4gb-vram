@@ -1,0 +1,99 @@
+{
+  "generated_at": "2026-11-20T14:14:18.528568+00:00",
+  "minimax_proof": {
+    "misere": {
+      "mode": "misere",
+      "target": 21,
+      "max_step": 3,
+      "states_checked": 21,
+      "winning_states": 15,
+      "losing_states": 6,
+      "mismatches": [],
+      "proven_optimal": true
+    },
+    "normal": {
+      "mode": "normal",
+      "target": 21,
+      "max_step": 3,
+      "states_checked": 21,
+      "winning_states": 16,
+      "losing_states": 5,
+      "mismatches": [],
+      "proven_optimal": true
+    }
+  },
+  "simulations": {
+    "misere_unbeatable_second_vs_random": {
+      "matches": 1000,
+      "mode": "misere",
+      "first_player": "human",
+      "ai_difficulty": "unbeatable",
+      "opponent_policy": "random",
+      "seed": 42,
+      "ai_wins": 1000,
+      "opponent_wins": 0,
+      "ai_win_rate_pct": 100.0,
+      "avg_turns_per_match": 11.0
+    },
+    "misere_unbeatable_second_vs_greedy": {
+      "matches": 1000,
+      "mode": "misere",
+      "first_player": "human",
+      "ai_difficulty": "unbeatable",
+      "opponent_policy": "greedy",
+      "seed": 43,
+      "ai_wins": 1000,
+      "opponent_wins": 0,
+      "ai_win_rate_pct": 100.0,
+      "avg_turns_per_match": 11.0
+    },
+    "misere_unbeatable_second_vs_mixed": {
+      "matches": 1000,
+      "mode": "misere",
+      "first_player": "human",
+      "ai_difficulty": "unbeatable",
+      "opponent_policy": "mixed",
+      "seed": 44,
+      "ai_wins": 1000,
+      "opponent_wins": 0,
+      "ai_win_rate_pct": 100.0,
+      "avg_turns_per_match": 11.0
+    },
+    "normal_unbeatable_first_vs_mixed": {
+      "matches": 1000,
+      "mode": "normal",
+      "first_player": "ai",
+      "ai_difficulty": "unbeatable",
+      "opponent_policy": "mixed",
+      "seed": 45,
+      "ai_wins": 1000,
+      "opponent_wins": 0,
+      "ai_win_rate_pct": 100.0,
+      "avg_turns_per_match": 11.0
+    },
+    "misere_smart_second_vs_random": {
+      "matches": 1000,
+      "mode": "misere",
+      "first_player": "human",
+      "ai_difficulty": "smart",
+      "opponent_policy": "random",
+      "seed": 46,
+      "ai_wins": 954,
+      "opponent_wins": 46,
+      "ai_win_rate_pct": 95.4,
+      "avg_turns_per_match": 11.21
+    },
+    "misere_easy_second_vs_random": {
+      "matches": 1000,
+      "mode": "misere",
+      "first_player": "human",
+      "ai_difficulty": "easy",
+      "opponent_policy": "random",
+      "seed": 47,
+      "ai_wins": 530,
+      "opponent_wins": 470,
+      "ai_win_rate_pct": 53.0,
+      "avg_turns_per_match": 10.85
+    }
+  }
+}

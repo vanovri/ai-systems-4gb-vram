@@ -1,0 +1,43 @@
+{
+  "total": 3,
+  "solved": 3,
+  "pass_rate": 1.0,
+  "benchmarks": [
+    {
+      "benchmark": "checkout_cart",
+      "baseline_failed": true,
+      "post_fix_passed": true,
+      "solved": true,
+      "stop_reason": "completed",
+      "steps_taken": 6,
+      "total_tokens": 3207,
+      "total_duration_ms": 3233.03,
+      "trace_path": "traces\\checkout_cart.jsonl",
+      "diff_present": true
+    },
+    {
+      "benchmark": "rate_limiter",
+      "baseline_failed": true,
+      "post_fix_passed": true,
+      "solved": true,
+      "stop_reason": "completed",
+      "steps_taken": 6,
+      "total_tokens": 4655,
+      "total_duration_ms": 3336.119,
+      "trace_path": "traces\\rate_limiter.jsonl",
+      "diff_present": true
+    },
+    {
+      "benchmark": "csv_parser",
+      "baseline_failed": true,
+      "post_fix_passed": true,
+      "solved": true,
+      "stop_reason": "completed",
+      "steps_taken": 6,
+      "total_tokens": 4434,
+      "total_duration_ms": 3352.644,
+      "trace_path": "traces\\csv_parser.jsonl",
+      "diff_present": true
+    }
+  ]
+}

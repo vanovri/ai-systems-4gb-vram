@@ -1,0 +1,46 @@
+name: CPU Unit Tests & Hygiene CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  python-cpu-suite:
+    name: Pure-Python, RAG, Quantizer & Agent Unit Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install lightweight CPU test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest numpy pydantic httpx beautifulsoup4 faiss-cpu pypdf fastapi uvicorn discord.py matplotlib
+
+      - name: Run CPU-compatible suites (03, 04 core, 06, 07, 08, 09, 10)
+        run: |
+          set -euo pipefail
+          for dir in 03_agent_harness 06_personal_rag_assistant 07_ai_research_agent 08_discord_bot 09_twenty_one_game 10_multi_agent_system; do
+            echo "=== Testing $dir ==="
+            (cd "$dir" && PYTHONPATH="$PWD" pytest -o addopts="" -W ignore tests)
+          done
+
+      - name: Verify pre-push hygiene gate
+        run: node scripts/pre-push-hygiene.mjs . --strict-docs
