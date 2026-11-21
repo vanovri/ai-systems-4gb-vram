@@ -32,7 +32,7 @@ jobs:
       - name: Install lightweight CPU test dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pytest numpy pydantic httpx beautifulsoup4 faiss-cpu pypdf fastapi uvicorn discord.py matplotlib
+          pip install pytest pytest-asyncio numpy pydantic httpx beautifulsoup4 faiss-cpu pypdf fastapi uvicorn discord.py matplotlib
 
       - name: Run CPU-compatible suites (03, 04 core, 06, 07, 08, 09, 10)
         run: |
